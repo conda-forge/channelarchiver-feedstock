@@ -1,4 +1,4 @@
-{% set version = "0.0.5" %}
+{% set version = "1.0.0" %}
 
 package:
   name: channelarchiver
@@ -7,7 +7,7 @@ package:
 source:
   fn: channelarchiver-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/channelarchiver/channelarchiver-{{ version }}.tar.gz
-  md5: ec0c0f80af8ebfc11ec239b299182592
+  md5: 581f2b61e0a9e90d590f352364cfaadb
 
 build:
     number: 0

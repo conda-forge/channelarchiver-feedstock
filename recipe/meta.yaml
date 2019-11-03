@@ -5,20 +5,18 @@ package:
   version: {{ version }}
 
 source:
-  fn: channelarchiver-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/channelarchiver/channelarchiver-{{ version }}.tar.gz
-  md5: ec0c0f80af8ebfc11ec239b299182592
+  sha256: 6aca7e046ac2f4e5ea6c88e91aa2e2a0d5bc9c384865b66dca52418639827973
 
 build:
-    number: 1000
-    script: python setup.py install --single-version-externally-managed --record record.txt
+    number: 1001
+    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
     - tzlocal
-
   run:
     - python
     - tzlocal
@@ -29,8 +27,9 @@ test:
 
 about:
   home: https://github.com/RobbieClarken/channelarchiver
-  license: MIT License
-  summary: 'Python client for the EPICS Channel Archiver.'
+  license: MIT
+  license_file: LICENSE.rst
+  summary: 'Python client for the EPICS Channel Archiver'
 
 extra:
   recipe-maintainers:

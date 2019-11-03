@@ -3,11 +3,11 @@ About channelarchiver
 
 Home: https://github.com/RobbieClarken/channelarchiver
 
-Package license: MIT License
+Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Python client for the EPICS Channel Archiver.
+Summary: Python client for the EPICS Channel Archiver
 
 
 

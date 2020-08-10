@@ -1,4 +1,4 @@
-{% set version = "0.0.5" %}
+{% set version = "1.0.0" %}
 
 package:
   name: channelarchiver
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/channelarchiver/channelarchiver-{{ version }}.tar.gz
-  sha256: 6aca7e046ac2f4e5ea6c88e91aa2e2a0d5bc9c384865b66dca52418639827973
+  sha256: 7be9df23e0b82912205755ccb34424536390cc11f5c82cc94d2046964103564d
 
 build:
-    number: 1002
-    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -29,7 +29,7 @@ about:
   home: https://github.com/RobbieClarken/channelarchiver
   license: MIT
   license_file: LICENSE.rst
-  summary: 'Python client for the EPICS Channel Archiver'
+  summary: Python client for the EPICS Channel Archiver
 
 extra:
   recipe-maintainers:

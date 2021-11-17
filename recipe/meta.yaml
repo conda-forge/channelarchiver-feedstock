@@ -1,37 +1,42 @@
-{% set version = "0.0.5" %}
+{% set name = "channelarchiver" %}
+{% set version = "1.0.0" %}
+
 
 package:
-  name: channelarchiver
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/channelarchiver/channelarchiver-{{ version }}.tar.gz
-  sha256: 6aca7e046ac2f4e5ea6c88e91aa2e2a0d5bc9c384865b66dca52418639827973
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/channelarchiver-{{ version }}.tar.gz
+  sha256: 7be9df23e0b82912205755ccb34424536390cc11f5c82cc94d2046964103564d
 
 build:
-    number: 1004
-    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
     - pip
-    - tzlocal
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - tzlocal
 
 test:
   imports:
     - channelarchiver
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/RobbieClarken/channelarchiver
+  summary: Python client for the EPICS Channel Archiver.
   license: MIT
   license_file: LICENSE.rst
-  summary: 'Python client for the EPICS Channel Archiver'
 
 extra:
   recipe-maintainers:
-    - licode
-    - tacaswell
+    - ocefpaf
